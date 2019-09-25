@@ -24,8 +24,13 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(nullable = false)
 	private String nombre;
+	
+	@Column(nullable = false)
 	private String apellido;
+	
+	@Column(nullable = false, unique = true)
 	private String email;
 	
 	@Column(name = "create_at")
@@ -43,6 +48,7 @@ public class Cliente implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
